@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports= {
   devtool: process.env.NODE_ENV === 'production' ? 'none' : '#cheap-module-eval-source-map',
   entry: {
-    renderer: path.join(__dirname, '../src/renderer/index.js')
+    renderer: path.join(__dirname, '../js_renderer/index.js')
   },
   module:{
     rules: [
