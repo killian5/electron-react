@@ -1,0 +1,103 @@
+{
+  "name": "electron-react",
+  "version": "1.0.0",
+  "description": "react-electron 桌面应用框架",
+  "main": "./build/main.js",
+  "author": "killian",
+  "scripts": {
+    "start": "node ./scripts/start",
+    "build": "electron-builder -l",
+    "prebuild": "node ./scripts/build.js"
+  },
+  "homepage": "./",
+  "build": {
+    "appId": "react-electron-cli",
+    "productName": "项目名称",
+    "copyright": "Copyright © 2020 ${author}",
+    "files": [
+      "build/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "extraMetadata": {
+      "main": "./build/main.js"
+    },
+    "extends": null,
+    "mac": {
+      "category": "public.app-category.entertainment",
+      "artifactName": "${productName}-${version}.${ext}"
+    },
+    "dmg": {
+      "icon": "public/icon.icns",
+      "iconSize": 100,
+      "contents": [
+        {
+          "x": 380,
+          "y": 280,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 110,
+          "y": 280,
+          "type": "file"
+        }
+      ],
+      "window": {
+        "width": 500,
+        "height": 500
+      }
+    },
+    "linux": {
+      "target": {
+        "target": "appimage",
+        "arch": [
+          "armv7l"
+        ]
+      },
+      "icon": "public/icon.png"
+    },
+    "win": {
+      "target": [
+        "msi",
+        "nsis"
+      ],
+      "icon": "public/icon.ico",
+      "artifactName": "${productName}-${version}.${ext}",
+      "publisherName": "killian"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false,
+      "perMachine": false
+    }
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/runtime": "^7.11.2",
+    "@babel/runtime-corejs2": "^7.11.2",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.1",
+    "axios": "^0.19.2",
+    "babel-loader": "^8.1.0",
+    "cfonts": "^2.8.6",
+    "chalk": "^4.1.0",
+    "cross-env": "^7.0.2",
+    "css-loader": "3.4.2",
+    "del": "^5.1.0",
+    "electron": "^8.0.5",
+    "electron-builder": "^21.2.0",
+    "html-webpack-plugin": "4.0.0-beta.11",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "style-loader": "0.23.1",
+    "url-loader": "2.3.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "3.10.3",
+    "webpack-hot-middleware": "^2.25.0"
+  }
+}
