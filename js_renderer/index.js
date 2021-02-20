@@ -1,9 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import './test.less'
 
 const App = ()=>{
   return (
-    <div>hello electron react</div>
+    <div>
+      <p className="a">
+        <span className="b">1231231</span>
+      </p>
+    </div>
   )
 }
 

@@ -9,8 +9,9 @@ module.exports= {
   module:{
     rules: [
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        test: /\.css|.less$/,
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader','less-loader']
       },
       {
         test: /\.js$/,  
@@ -18,21 +19,7 @@ module.exports= {
           loader: "babel-loader",
           options: {
             presets: [
-              [
-                '@babel/preset-env',{
-                  targets: {
-                    "chrome": "80",
-                  }
-                }
-              ],
               '@babel/preset-react'
-            ],
-            plugins:[
-              [  "@babel/plugin-transform-runtime",
-                {
-                  "corejs": 2,
-                }
-              ],
             ]
           }
         },
