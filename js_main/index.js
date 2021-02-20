@@ -1,7 +1,6 @@
 import path from "path"
 import { app, BrowserWindow, ipcMain } from "electron"
 
-app.allowRendererProcessReuse = true
 const isDev = process.env.NODE_ENV === 'development'
 
 const winURL = isDev
@@ -9,6 +8,12 @@ const winURL = isDev
   : "file://"+__dirname+"/index.html";
 
 function createWindow () {
+  // react 调试工具
+  // 加载应用的index.html
+  const reactDevtoolsDir = path.resolve(__dirname, "../devtools/react_devtools")
+  const reduxDevtoolsDir = path.resolve(__dirname, "../devtools/redux_devtools")
+  BrowserWindow.addDevToolsExtension(reactDevtoolsDir)
+  BrowserWindow.addDevToolsExtension(reduxDevtoolsDir)
 
   // Create the browser window.
   const win = new BrowserWindow({
@@ -16,14 +21,9 @@ function createWindow () {
     height: 600,
     useContentSize: true,
     webPreferences:{
-      nodeIntegration:true,
-      webSecurity: false // 允许加载本地资源
+      nodeIntegration:true
     }
   })
-  // react 调试工具
-  // 加载应用的index.html
-  BrowserWindow.addDevToolsExtension(path.resolve(__dirname, "../devtools/react_devtools"));
-  BrowserWindow.addDevToolsExtension(path.resolve(__dirname, "../devtools/redux_devtools"));
   win.loadURL(winURL)
   win.webContents.openDevTools()
 

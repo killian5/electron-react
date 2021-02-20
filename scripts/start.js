@@ -11,7 +11,7 @@ const webpackHotMiddleware = require('webpack-hot-middleware')
 const mainConfig = require('./webpack.main.config')
 const rendererConfig = require('./webpack.renderer.config')
 
-var electronProcess = null, manualRestart = false;
+let electronProcess = null, manualRestart = false;
 
 function startRenderer () {
   return new Promise(resolve => {
