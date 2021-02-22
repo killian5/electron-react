@@ -7,7 +7,7 @@ const App = ()=>{
   return (
     <div>
       <p className="a">
-        <span className="b">1231231</span>
+        <span className="b">hello Electron</span>
       </p>
     </div>
   )

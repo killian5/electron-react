@@ -1,5 +1,6 @@
-About
 electron 8.0.0 + react16 + webpack4 + axios +less + react_devtools + redux_devtools 搭建的脚手架工程(无多余内容) 
+
+
 
 可以直接打包 win mac linux 安装包
 在package.json中配置下面命令就可以打包不同的安装包
