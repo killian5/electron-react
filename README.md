@@ -9,7 +9,8 @@ electron 8.0.0 + react16 + webpack4 + axios +less + react_devtools + redux_devto
 --linux         //linux版安装包
 --win --ia32    //win32版安装包
 --win --x64     //win64版安装包
-// 例如
+
+// 例：在package.json中修改
 "build": "electron-builder --win",
 ```
 
@@ -30,9 +31,9 @@ npm i && npm start
 ```
 npm run build
 ```
-
+### 无多余内容，纯脚手架，下载后直接使用，需要插件自行安装
 ### Electron V8.0.0 兼容 es6 
+### 自带调试工具，调试错误方便
 ### 多平台打包更方便
 ### 支持less
 ### 多线程
-
