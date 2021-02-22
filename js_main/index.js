@@ -21,6 +21,7 @@ function createWindow () {
     height: 600,
     useContentSize: true,
     webPreferences:{
+      webSecurity: false,
       nodeIntegration:true
     }
   })
