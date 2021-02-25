@@ -74,11 +74,11 @@
     }
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.1",
-    "@babel/core": "^7.10.2",
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.1",
     "@babel/preset-react": "^7.10.1",
     "axios": "^0.19.2",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "^8.2.2",
     "cfonts": "^2.8.6",
     "chalk": "^4.1.0",
     "cross-env": "^7.0.2",
@@ -97,5 +97,8 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "3.10.3",
     "webpack-hot-middleware": "^2.25.0"
+  },
+  "dependencies": {
+    "nedb": "^1.8.0"
   }
 }

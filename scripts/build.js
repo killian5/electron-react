@@ -1,5 +1,4 @@
 const del = require('del')
-const path = require('path')
 const webpack = require('webpack')
 const chalk = require('chalk')
 

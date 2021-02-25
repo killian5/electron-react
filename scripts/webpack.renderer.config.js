@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports= {
-  devtool: process.env.NODE_ENV === 'production' ? 'none' : '#cheap-module-eval-source-map',
+  devtool: '#cheap-module-eval-source-map',
   entry: {
     renderer: path.join(__dirname, '../js_renderer/index.js')
   },
@@ -16,10 +16,10 @@ module.exports= {
       {
         test: /\.js$/,  
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             presets: [
-              '@babel/preset-react'
+              ['@babel/preset-react']
             ]
           }
         },
@@ -32,7 +32,7 @@ module.exports= {
           query: {
             limit: 10000,
             name:'[name].[ext]',
-            outputPath:"images/"
+            outputPath:'images/'
           }
         }
       },
@@ -43,7 +43,7 @@ module.exports= {
           query: {
             limit: 10000,   
             name:'[name].[ext]',
-            outputPath:"fonts/"
+            outputPath:'fonts/'
           }
         }
       }
@@ -55,6 +55,11 @@ module.exports= {
       template:path.resolve(__dirname,'../public/index.html')
     })
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   output:{
     path:path.resolve(__dirname,'../build'),
     filename:'renderer.js'

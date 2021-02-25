@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports= {
+  devtool: '#cheap-module-eval-source-map',
   entry: {
     main: path.join(__dirname, '../js_main/index.js')
   },
@@ -8,7 +9,9 @@ module.exports= {
     rules: [
       {
         test: /\.js$/,  
-        use: "babel-loader",
+        use: {
+          loader: 'babel-loader'
+        },
         exclude: /node_modules/
       }
     ]
