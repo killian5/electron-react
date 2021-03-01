@@ -55,6 +55,13 @@ module.exports= {
       template:path.resolve(__dirname,'../public/index.html')
     })
   ],
+  resolve: {
+    extensions: ['.js','.json'],
+    alias:{
+      '@redux': path.resolve(__dirname, '../js_renderer/redux/'),
+      'components':path.resolve(__dirname,'../js_renderer/components/')
+    }
+  },
   optimization: {
     splitChunks: {
       chunks: 'all',

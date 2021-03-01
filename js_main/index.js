@@ -20,8 +20,8 @@ function createWindow () {
   import("./handle") // 子进程发送消息到主进程注册位置
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1024,
+    height: 800,
     useContentSize: true,
     webPreferences:{
       nodeIntegration:true

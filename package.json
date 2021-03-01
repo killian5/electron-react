@@ -89,8 +89,6 @@
     "html-webpack-plugin": "4.0.0-beta.11",
     "less": "^4.1.1",
     "less-loader": "^7.0.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
     "style-loader": "0.23.1",
     "url-loader": "2.3.0",
     "webpack": "^4.44.1",
@@ -99,6 +97,12 @@
     "webpack-hot-middleware": "^2.25.0"
   },
   "dependencies": {
-    "nedb": "^1.8.0"
+    "nedb": "^1.8.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   }
 }
