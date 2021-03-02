@@ -1,5 +1,5 @@
 import { app, ipcMain } from "electron"
-import { createPath, readFileToAudio, saveRequestFile} from '../utils/File'
+import { createPath, readFileToBase64, saveRequestFile} from '../utils/File'
 
 /***
  * 下载文件(主进程)
@@ -23,7 +23,7 @@ ipcMain.handle('readFile', async (event, dir, realitySize = 0) => {
   const {state} = await createPath(dir)
   // state = 0 路径存在说明文件已经有了
   if(!state){
-    const {state, size, data} = await readFileToAudio(dir)
+    const {state, size, data} = await readFileToBase64(dir)
     if(state){ // 文件读取成功 实际大小符合 误差值为80%
       if(size / realitySize > 0.8){
         return {state:1, data}

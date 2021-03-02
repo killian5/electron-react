@@ -30,10 +30,13 @@ export const actions = {
   },
   changeColor(color){
     return dispatch => {
-      dispatch({
-        type: types.CHANGE_COLOR,
-        color
-      })
+      setTimeout(()=>{
+        dispatch({
+          type: types.CHANGE_COLOR,
+          color
+        })
+      }, 1000)
+
     }
   }
 }

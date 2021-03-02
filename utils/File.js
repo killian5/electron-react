@@ -26,13 +26,13 @@ export function createPath(dir){
 	})
 }
 /***
- * 读取音频文件并转为Media
- * @method readFileToAudio
+ * 读取文件并转为base64
+ * @method readFileToBase64
  * @for File
  * @param {String} fileDir 文件地址
  * @return {Promise} 保存信息
  */
-export function readFileToAudio(fileDir){
+export function readFileToBase64(fileDir){
 	return new Promise(resolve => {
 		fs.readFile(fileDir,(err,data)=>{	
 			if(err){
